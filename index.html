@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dogpoint - Virtuální Adopce</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <img src="dogpoint-logo.png" alt="Dogpoint Logo" class="logo">
+        <ul class="nav-links">
+            <li><a href="#">Domů</a></li>
+            <li><a href="#">Adopce</a></li>
+            <li><a href="#">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Najdi si svého psího parťáka! 🐶</h1>
+    </header>
+
+    <!-- Filter Section -->
+    <section class="filter">
+        <select id="dogFilter">
+            <option value="all">Všichni psi</option>
+            <option value="available">Dostupní psi</option>
+        </select>
+    </section>
+
+    <!-- Dog Listing -->
+    <section class="dog-list">
+        <div class="dog-card">
+            <img src="dog1.jpg" alt="Rex">
+            <h2>Rex</h2>
+            <p>Věk: 3 roky</p>
+            <p>Velikost: Velký</p>
+            <p class="available">Dostupný</p>
+            <button class="adopt-btn">Virtuálně adoptovat</button>
+        </div>
+        <div class="dog-card">
+            <img src="dog2.jpg" alt="Bella">
+            <h2>Bella</h2>
+            <p>Věk: 2 roky</p>
+            <p>Velikost: Střední</p>
+            <p class="adopted">Adoptovaný</p>
+        </div>
+        <div class="dog-card">
+            <img src="dog3.jpg" alt="Charlie">
+            <h2>Charlie</h2>
+            <p>Věk: 1 rok</p>
+            <p>Velikost: Malý</p>
+            <p class="available">Dostupný</p>
+            <button class="adopt-btn">Virtuálně adoptovat</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Dogpoint. Všechna práva vyhrazena.</p>
+    </footer>
+
+    <script>
+        document.getElementById("dogFilter").addEventListener("change", function() {
+            let filterValue = this.value;
+            let dogs = document.querySelectorAll(".dog-card");
+            
+            dogs.forEach(dog => {
+                let status = dog.querySelector("p:nth-of-type(3)").textContent;
+                if (filterValue === "all" || (filterValue === "available" && status.includes("Dostupný"))) {
+                    dog.style.display = "block";
+                } else {
+                    dog.style.display = "none";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
