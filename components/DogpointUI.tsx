@@ -33,6 +33,11 @@ export default function DogpointUI() {
         </h1>
       </header>
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const selectedDog = ...;
+
+
+
       {/* Filter */}
       <Select
         onChange={(e) => setSelectedDog(e.target.value)}
