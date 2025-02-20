@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Select, SelectItem } from "@/components/ui/select";
 
 export default function DogpointUI() {
-  // const [selectedDog, setSelectedDog] = useState(null);
+ 
   const dogs = [
     { id: 1, name: "Rex", age: "3 roky", size: "Velký", status: "Dostupný" },
     { id: 2, name: "Bella", age: "2 roky", size: "Střední", status: "Adoptovaný" },
@@ -34,7 +34,7 @@ export default function DogpointUI() {
       </header>
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        const selectedDog = ...;
+       
 
 
 
